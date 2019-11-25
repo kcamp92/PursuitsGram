@@ -6,6 +6,8 @@ target 'PursuitsGram' do
   use_frameworks!
 
   # Pods for PursuitsGram
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
 
   target 'PursuitsGramTests' do
     inherit! :search_paths

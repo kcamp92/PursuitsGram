@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		0BA011B223884E12008203C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BA011B123884E12008203C4 /* Assets.xcassets */; };
 		0BA011B523884E12008203C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA011B323884E12008203C4 /* LaunchScreen.storyboard */; };
 		0BA011C023884E12008203C4 /* PursuitsGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011BF23884E12008203C4 /* PursuitsGramTests.swift */; };
+		0BA011CB238852A0008203C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BA011CA238852A0008203C4 /* GoogleService-Info.plist */; };
+		A35F1A14D84A7946C783F598 /* Pods_PursuitsGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01572D931BB8B999E5D75EE4 /* Pods_PursuitsGram.framework */; };
+		EC352E943B4FD7E92D6055E6 /* Pods_PursuitsGramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860C58E6AA160944C92DE7D8 /* Pods_PursuitsGramTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01572D931BB8B999E5D75EE4 /* Pods_PursuitsGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PursuitsGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA011A523884E0C008203C4 /* PursuitsGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PursuitsGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA011A823884E0C008203C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA011AA23884E0C008203C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,12 @@
 		0BA011BB23884E12008203C4 /* PursuitsGramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PursuitsGramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA011BF23884E12008203C4 /* PursuitsGramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursuitsGramTests.swift; sourceTree = "<group>"; };
 		0BA011C123884E12008203C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BA011CA238852A0008203C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0C38D44C5837FE809CBF6389 /* Pods-PursuitsGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGram.release.xcconfig"; path = "Target Support Files/Pods-PursuitsGram/Pods-PursuitsGram.release.xcconfig"; sourceTree = "<group>"; };
+		49A8899007643574BC4FBF1C /* Pods-PursuitsGramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGramTests.release.xcconfig"; path = "Target Support Files/Pods-PursuitsGramTests/Pods-PursuitsGramTests.release.xcconfig"; sourceTree = "<group>"; };
+		6BB6AA3EECB1861112F5B451 /* Pods-PursuitsGramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGramTests.debug.xcconfig"; path = "Target Support Files/Pods-PursuitsGramTests/Pods-PursuitsGramTests.debug.xcconfig"; sourceTree = "<group>"; };
+		860C58E6AA160944C92DE7D8 /* Pods_PursuitsGramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PursuitsGramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D1DBC3D7C7A35B01E99E9A /* Pods-PursuitsGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGram.debug.xcconfig"; path = "Target Support Files/Pods-PursuitsGram/Pods-PursuitsGram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A35F1A14D84A7946C783F598 /* Pods_PursuitsGram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC352E943B4FD7E92D6055E6 /* Pods_PursuitsGramTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +76,8 @@
 				0BA011A723884E0C008203C4 /* PursuitsGram */,
 				0BA011BE23884E12008203C4 /* PursuitsGramTests */,
 				0BA011A623884E0C008203C4 /* Products */,
+				6FC7F0FF075542C2AB6F93E5 /* Pods */,
+				74C80079B77B8E1CBFE3DD29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +93,16 @@
 		0BA011A723884E0C008203C4 /* PursuitsGram */ = {
 			isa = PBXGroup;
 			children = (
-				0BA011A823884E0C008203C4 /* AppDelegate.swift */,
-				0BA011AA23884E0C008203C4 /* SceneDelegate.swift */,
-				0BA011AC23884E0C008203C4 /* ViewController.swift */,
-				0BA011AE23884E0C008203C4 /* Main.storyboard */,
-				0BA011B123884E12008203C4 /* Assets.xcassets */,
-				0BA011B323884E12008203C4 /* LaunchScreen.storyboard */,
+				0BA011E6238C1FAE008203C4 /* Firebase */,
+				0BA011E5238C1FA1008203C4 /* Utilities */,
+				0BA011E1238C1EDE008203C4 /* Authentication */,
+				0BA011E0238C1EBA008203C4 /* Models */,
+				0BA011E4238C1F8F008203C4 /* Extensions */,
+				0BA011DF238C1EB2008203C4 /* Views */,
+				0BA011DE238C1EA5008203C4 /* Controllers */,
 				0BA011B623884E12008203C4 /* Info.plist */,
+				0BA011CA238852A0008203C4 /* GoogleService-Info.plist */,
+				0BA011E7238C1FCA008203C4 /* Supporting Files */,
 			);
 			path = PursuitsGram;
 			sourceTree = "<group>";
@@ -99,6 +116,104 @@
 			path = PursuitsGramTests;
 			sourceTree = "<group>";
 		};
+		0BA011DE238C1EA5008203C4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0BA011E2238C1F09008203C4 /* Posts */,
+				0BA011E3238C1F17008203C4 /* Users */,
+				0BA011AC23884E0C008203C4 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0BA011DF238C1EB2008203C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0BA011E0238C1EBA008203C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0BA011E1238C1EDE008203C4 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		0BA011E2238C1F09008203C4 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		0BA011E3238C1F17008203C4 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		0BA011E4238C1F8F008203C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0BA011E5238C1FA1008203C4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0BA011E6238C1FAE008203C4 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		0BA011E7238C1FCA008203C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0BA011B323884E12008203C4 /* LaunchScreen.storyboard */,
+				0BA011AE23884E0C008203C4 /* Main.storyboard */,
+				0BA011AA23884E0C008203C4 /* SceneDelegate.swift */,
+				0BA011B123884E12008203C4 /* Assets.xcassets */,
+				0BA011A823884E0C008203C4 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6FC7F0FF075542C2AB6F93E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93D1DBC3D7C7A35B01E99E9A /* Pods-PursuitsGram.debug.xcconfig */,
+				0C38D44C5837FE809CBF6389 /* Pods-PursuitsGram.release.xcconfig */,
+				6BB6AA3EECB1861112F5B451 /* Pods-PursuitsGramTests.debug.xcconfig */,
+				49A8899007643574BC4FBF1C /* Pods-PursuitsGramTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		74C80079B77B8E1CBFE3DD29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01572D931BB8B999E5D75EE4 /* Pods_PursuitsGram.framework */,
+				860C58E6AA160944C92DE7D8 /* Pods_PursuitsGramTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BA011C423884E12008203C4 /* Build configuration list for PBXNativeTarget "PursuitsGram" */;
 			buildPhases = (
+				74D7D35DB2692B5971D4A371 /* [CP] Check Pods Manifest.lock */,
 				0BA011A123884E0C008203C4 /* Sources */,
 				0BA011A223884E0C008203C4 /* Frameworks */,
 				0BA011A323884E0C008203C4 /* Resources */,
+				C53E5F3AC6A1B7C315A4667E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BA011C723884E12008203C4 /* Build configuration list for PBXNativeTarget "PursuitsGramTests" */;
 			buildPhases = (
+				53D54822972EF41FCF785A11 /* [CP] Check Pods Manifest.lock */,
 				0BA011B723884E12008203C4 /* Sources */,
 				0BA011B823884E12008203C4 /* Frameworks */,
 				0BA011B923884E12008203C4 /* Resources */,
@@ -181,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA011B523884E12008203C4 /* LaunchScreen.storyboard in Resources */,
+				0BA011CB238852A0008203C4 /* GoogleService-Info.plist in Resources */,
 				0BA011B223884E12008203C4 /* Assets.xcassets in Resources */,
 				0BA011B023884E0C008203C4 /* Main.storyboard in Resources */,
 			);
@@ -194,6 +313,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53D54822972EF41FCF785A11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PursuitsGramTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74D7D35DB2692B5971D4A371 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PursuitsGram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C53E5F3AC6A1B7C315A4667E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PursuitsGram/Pods-PursuitsGram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PursuitsGram/Pods-PursuitsGram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PursuitsGram/Pods-PursuitsGram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0BA011A123884E0C008203C4 /* Sources */ = {
@@ -360,6 +543,7 @@
 		};
 		0BA011C523884E12008203C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D1DBC3D7C7A35B01E99E9A /* Pods-PursuitsGram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,6 +561,7 @@
 		};
 		0BA011C623884E12008203C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C38D44C5837FE809CBF6389 /* Pods-PursuitsGram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +579,7 @@
 		};
 		0BA011C823884E12008203C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BB6AA3EECB1861112F5B451 /* Pods-PursuitsGramTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,6 +601,7 @@
 		};
 		0BA011C923884E12008203C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49A8899007643574BC4FBF1C /* Pods-PursuitsGramTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
