@@ -8,6 +8,7 @@ target 'PursuitsGram' do
   # Pods for PursuitsGram
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
 
   target 'PursuitsGramTests' do
     inherit! :search_paths

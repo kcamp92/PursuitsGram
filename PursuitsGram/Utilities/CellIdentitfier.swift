@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum CellIdentifier: String {
+    case postListCell
+    case userListCell
+    case postHeaderCell
+    case userHeaderCell
+    case commentCell
+}

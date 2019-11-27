@@ -9,12 +9,28 @@
 /* Begin PBXBuildFile section */
 		0BA011A923884E0C008203C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011A823884E0C008203C4 /* AppDelegate.swift */; };
 		0BA011AB23884E0C008203C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011AA23884E0C008203C4 /* SceneDelegate.swift */; };
-		0BA011AD23884E0C008203C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011AC23884E0C008203C4 /* ViewController.swift */; };
 		0BA011B023884E0C008203C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA011AE23884E0C008203C4 /* Main.storyboard */; };
 		0BA011B223884E12008203C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BA011B123884E12008203C4 /* Assets.xcassets */; };
 		0BA011B523884E12008203C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA011B323884E12008203C4 /* LaunchScreen.storyboard */; };
 		0BA011C023884E12008203C4 /* PursuitsGramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011BF23884E12008203C4 /* PursuitsGramTests.swift */; };
 		0BA011CB238852A0008203C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BA011CA238852A0008203C4 /* GoogleService-Info.plist */; };
+		0BA011E9238C338D008203C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011E8238C338D008203C4 /* LoginViewController.swift */; };
+		0BA011EB238C348E008203C4 /* CellIdentitfier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011EA238C348E008203C4 /* CellIdentitfier.swift */; };
+		0BA011ED238C3613008203C4 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011EC238C3613008203C4 /* FirebaseAuthService.swift */; };
+		0BA011EF238C3644008203C4 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011EE238C3644008203C4 /* FirestoreService.swift */; };
+		0BA011F1238C36B2008203C4 /* FirebaseStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011F0238C36B2008203C4 /* FirebaseStorageService.swift */; };
+		0BA011F3238C6FF4008203C4 /* String+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011F2238C6FF4008203C4 /* String+Validations.swift */; };
+		0BA011F5238C7047008203C4 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011F4238C7047008203C4 /* AppUser.swift */; };
+		0BA011F7238C803A008203C4 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011F6238C803A008203C4 /* Posts.swift */; };
+		0BA011F9238C89BE008203C4 /* PursuitTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011F8238C89BE008203C4 /* PursuitTabBar.swift */; };
+		0BA011FD238C8B20008203C4 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011FC238C8B20008203C4 /* PostListViewController.swift */; };
+		0BA011FF238C8B5C008203C4 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA011FE238C8B5C008203C4 /* UploadViewController.swift */; };
+		0BA01201238C8B73008203C4 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA01200238C8B73008203C4 /* UserProfileViewController.swift */; };
+		0BA01203238C8D88008203C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA01202238C8D88008203C4 /* SignUpViewController.swift */; };
+		0BA01205238CA4F9008203C4 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA01204238CA4F9008203C4 /* ProfileEditViewController.swift */; };
+		0BA01207238D6E7C008203C4 /* PostsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA01206238D6E7C008203C4 /* PostsFeedViewController.swift */; };
+		0BA01209238D6EAB008203C4 /* PhotosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA01208238D6EAB008203C4 /* PhotosDetailViewController.swift */; };
+		0BA0120B238DBC5B008203C4 /* postCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0120A238DBC5B008203C4 /* postCell.swift */; };
 		A35F1A14D84A7946C783F598 /* Pods_PursuitsGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01572D931BB8B999E5D75EE4 /* Pods_PursuitsGram.framework */; };
 		EC352E943B4FD7E92D6055E6 /* Pods_PursuitsGramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860C58E6AA160944C92DE7D8 /* Pods_PursuitsGramTests.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +50,6 @@
 		0BA011A523884E0C008203C4 /* PursuitsGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PursuitsGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA011A823884E0C008203C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BA011AA23884E0C008203C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0BA011AC23884E0C008203C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0BA011AF23884E0C008203C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0BA011B123884E12008203C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BA011B423884E12008203C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +58,23 @@
 		0BA011BF23884E12008203C4 /* PursuitsGramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursuitsGramTests.swift; sourceTree = "<group>"; };
 		0BA011C123884E12008203C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BA011CA238852A0008203C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0BA011E8238C338D008203C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0BA011EA238C348E008203C4 /* CellIdentitfier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentitfier.swift; sourceTree = "<group>"; };
+		0BA011EC238C3613008203C4 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		0BA011EE238C3644008203C4 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		0BA011F0238C36B2008203C4 /* FirebaseStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageService.swift; sourceTree = "<group>"; };
+		0BA011F2238C6FF4008203C4 /* String+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validations.swift"; sourceTree = "<group>"; };
+		0BA011F4238C7047008203C4 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		0BA011F6238C803A008203C4 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		0BA011F8238C89BE008203C4 /* PursuitTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PursuitTabBar.swift; sourceTree = "<group>"; };
+		0BA011FC238C8B20008203C4 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		0BA011FE238C8B5C008203C4 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		0BA01200238C8B73008203C4 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		0BA01202238C8D88008203C4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0BA01204238CA4F9008203C4 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		0BA01206238D6E7C008203C4 /* PostsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedViewController.swift; sourceTree = "<group>"; };
+		0BA01208238D6EAB008203C4 /* PhotosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailViewController.swift; sourceTree = "<group>"; };
+		0BA0120A238DBC5B008203C4 /* postCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCell.swift; sourceTree = "<group>"; };
 		0C38D44C5837FE809CBF6389 /* Pods-PursuitsGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGram.release.xcconfig"; path = "Target Support Files/Pods-PursuitsGram/Pods-PursuitsGram.release.xcconfig"; sourceTree = "<group>"; };
 		49A8899007643574BC4FBF1C /* Pods-PursuitsGramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGramTests.release.xcconfig"; path = "Target Support Files/Pods-PursuitsGramTests/Pods-PursuitsGramTests.release.xcconfig"; sourceTree = "<group>"; };
 		6BB6AA3EECB1861112F5B451 /* Pods-PursuitsGramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGramTests.debug.xcconfig"; path = "Target Support Files/Pods-PursuitsGramTests/Pods-PursuitsGramTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,11 +125,8 @@
 		0BA011A723884E0C008203C4 /* PursuitsGram */ = {
 			isa = PBXGroup;
 			children = (
-				0BA011E6238C1FAE008203C4 /* Firebase */,
 				0BA011E5238C1FA1008203C4 /* Utilities */,
-				0BA011E1238C1EDE008203C4 /* Authentication */,
 				0BA011E0238C1EBA008203C4 /* Models */,
-				0BA011E4238C1F8F008203C4 /* Extensions */,
 				0BA011DF238C1EB2008203C4 /* Views */,
 				0BA011DE238C1EA5008203C4 /* Controllers */,
 				0BA011B623884E12008203C4 /* Info.plist */,
@@ -119,9 +148,10 @@
 		0BA011DE238C1EA5008203C4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0BA011F8238C89BE008203C4 /* PursuitTabBar.swift */,
+				0BA011E1238C1EDE008203C4 /* Authentication */,
 				0BA011E2238C1F09008203C4 /* Posts */,
 				0BA011E3238C1F17008203C4 /* Users */,
-				0BA011AC23884E0C008203C4 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,6 +159,7 @@
 		0BA011DF238C1EB2008203C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0BA0120A238DBC5B008203C4 /* postCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,6 +167,8 @@
 		0BA011E0238C1EBA008203C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0BA011F4238C7047008203C4 /* AppUser.swift */,
+				0BA011F6238C803A008203C4 /* Posts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +176,8 @@
 		0BA011E1238C1EDE008203C4 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				0BA011E8238C338D008203C4 /* LoginViewController.swift */,
+				0BA01202238C8D88008203C4 /* SignUpViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -150,6 +185,9 @@
 		0BA011E2238C1F09008203C4 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				0BA011FC238C8B20008203C4 /* PostListViewController.swift */,
+				0BA011FE238C8B5C008203C4 /* UploadViewController.swift */,
+				0BA01208238D6EAB008203C4 /* PhotosDetailViewController.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -157,6 +195,9 @@
 		0BA011E3238C1F17008203C4 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				0BA01200238C8B73008203C4 /* UserProfileViewController.swift */,
+				0BA01204238CA4F9008203C4 /* ProfileEditViewController.swift */,
+				0BA01206238D6E7C008203C4 /* PostsFeedViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -164,6 +205,7 @@
 		0BA011E4238C1F8F008203C4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0BA011F2238C6FF4008203C4 /* String+Validations.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +213,9 @@
 		0BA011E5238C1FA1008203C4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0BA011EA238C348E008203C4 /* CellIdentitfier.swift */,
+				0BA011E6238C1FAE008203C4 /* Firebase */,
+				0BA011E4238C1F8F008203C4 /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -178,6 +223,9 @@
 		0BA011E6238C1FAE008203C4 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				0BA011EC238C3613008203C4 /* FirebaseAuthService.swift */,
+				0BA011EE238C3644008203C4 /* FirestoreService.swift */,
+				0BA011F0238C36B2008203C4 /* FirebaseStorageService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -383,9 +431,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BA011AD23884E0C008203C4 /* ViewController.swift in Sources */,
+				0BA01205238CA4F9008203C4 /* ProfileEditViewController.swift in Sources */,
+				0BA011FF238C8B5C008203C4 /* UploadViewController.swift in Sources */,
+				0BA011ED238C3613008203C4 /* FirebaseAuthService.swift in Sources */,
+				0BA011F5238C7047008203C4 /* AppUser.swift in Sources */,
+				0BA011F1238C36B2008203C4 /* FirebaseStorageService.swift in Sources */,
+				0BA011EF238C3644008203C4 /* FirestoreService.swift in Sources */,
+				0BA011FD238C8B20008203C4 /* PostListViewController.swift in Sources */,
+				0BA011F3238C6FF4008203C4 /* String+Validations.swift in Sources */,
+				0BA01209238D6EAB008203C4 /* PhotosDetailViewController.swift in Sources */,
+				0BA011E9238C338D008203C4 /* LoginViewController.swift in Sources */,
 				0BA011A923884E0C008203C4 /* AppDelegate.swift in Sources */,
+				0BA0120B238DBC5B008203C4 /* postCell.swift in Sources */,
+				0BA01207238D6E7C008203C4 /* PostsFeedViewController.swift in Sources */,
+				0BA01203238C8D88008203C4 /* SignUpViewController.swift in Sources */,
+				0BA01201238C8B73008203C4 /* UserProfileViewController.swift in Sources */,
+				0BA011F7238C803A008203C4 /* Posts.swift in Sources */,
 				0BA011AB23884E0C008203C4 /* SceneDelegate.swift in Sources */,
+				0BA011F9238C89BE008203C4 /* PursuitTabBar.swift in Sources */,
+				0BA011EB238C348E008203C4 /* CellIdentitfier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
