@@ -50,7 +50,7 @@ class ProfileEditViewController: UIViewController {
          textField.borderStyle = .bezel
          textField.layer.cornerRadius = 5
          textField.autocorrectionType = .no
-        // textField.delegate = self
+         textField.delegate = self
          textField.textColor = .white
          return textField
      }()
@@ -86,6 +86,8 @@ class ProfileEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .darkGray
+        addSubviews()
+        setupConstraints()
 
      
     }
@@ -146,7 +148,7 @@ class ProfileEditViewController: UIViewController {
     private func presentPhotoPickerController(){
         DispatchQueue.main.async {
             let imagePickerViewController = UIImagePickerController()
-            //imagePickerViewController.delegate = self
+            imagePickerViewController.delegate = self
             imagePickerViewController.sourceType = .photoLibrary
             imagePickerViewController.allowsEditing = true
             imagePickerViewController.mediaTypes = ["public.image"]
@@ -172,10 +174,48 @@ class ProfileEditViewController: UIViewController {
     
   
 //MARK: -UI Constraints
-//MARK: - Extensions
+
+    func addSubviews(){
+        
+    }
+    
+    func setupConstraints(){
+        
+    }
     
 }
 
+//MARK: - Extensions
+
+extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {
+            return
+        }
+        self.image = image
+        guard let imageData = image.jpegData(compressionQuality: 0.6) else {
+            return
+        }
+        FirebaseStorageService.manager.storeImage(image: imageData, completion: { [weak self] (result) in
+            switch result {
+            case .success(let url):
+                self?.imageURL = url
+            case .failure(let error):
+                print(error)
+            }
+            
+        })
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension ProfileEditViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}
 
 /*
 import UIKit
@@ -185,7 +225,7 @@ class ProfileEditViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .gray
+   
         setupViews()
         //MARK: TODO - load in user image and fields when coming from profile page
     }
@@ -249,32 +289,6 @@ class ProfileEditViewController: UIViewController {
     }
 }
 
-extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImage else {
-            //MARK: TODO - handle couldn't get image :(
-            return
-        }
-        self.image = image
-        
-        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
-            //MARK: TODO - gracefully fail out without interrupting UX
-            return
-        }
-        
-        FirebaseStorageService.manager.storeImage(image: imageData, completion: { [weak self] (result) in
-            switch result{
-            case .success(let url):
-                //Note - defer UI response, update user image url in auth and in firestore when save is pressed
-                self?.imageURL = url
-            case .failure(let error):
-                //MARK: TODO - defer image not save alert, try again later. maybe make VC "dirty" to allow user to move on in nav stack
-                print(error)
-            }
-        })
-        dismiss(animated: true, completion: nil)
-    }
-}
 */
 
 
@@ -303,15 +317,6 @@ class ProfileEditViewController: UIViewController {
         imageView.layer.borderColor = UIColor.white.cgColor
     }
 
-    
-  
-    
-    //MARK: Private Methods
-    
- 
-   
-   
-    
     //MARK: Constraint Methods
 
     private func setupViews() {
@@ -384,37 +389,5 @@ class ProfileEditViewController: UIViewController {
 }
 
 
-//MARK: ImagePicker Extension
-extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-          guard let image = info[.editedImage] as? UIImage else {
-              //MARK: TODO - handle couldn't get image :(
-              return
-          }
-          self.image = image
-          
-        guard let imageData = image.jpegData(compressionQuality: 0.4) else {
-              //MARK: TODO - gracefully fail out without interrupting UX
-              return
-          }
-          
-          FirebaseStorageService.profileManager.storeImage(image: imageData, completion: { [weak self] (result) in
-              switch result{
-              case .success(let url):
-                  //Note - defer UI response, update user image url in auth and in firestore when save is pressed
-                  self?.imageURL = url
-              case .failure(let error):
-                  //MARK: TODO - defer image not save alert, try again later. maybe make VC "dirty" to allow user to move on in nav stack
-                  print(error)
-              }
-          })
-          dismiss(animated: true, completion: nil)
-      }
-}
 
-extension ProfileEditViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-    }
-}
 */
