@@ -109,9 +109,11 @@ class UserProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
          getPostsForUser()
+         setUpUserName()
      }
 
-    
+
+        
 //MARK: -Objc Methods
  
 @objc private func editProButt(){
@@ -366,13 +368,7 @@ class ProfileViewController: UIViewController {
         profileImage.layer.borderColor = UIColor.white.cgColor
         getPostCount()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        getPostCount()
-        setUserName()
-    }
-    
+   
     //MARK: Constraint Methods
     
     private func setUpView(){

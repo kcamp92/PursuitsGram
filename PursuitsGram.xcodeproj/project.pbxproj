@@ -31,6 +31,7 @@
 		0BA01207238D6E7C008203C4 /* PostsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA01206238D6E7C008203C4 /* PostsFeedViewController.swift */; };
 		0BA01209238D6EAB008203C4 /* PhotosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA01208238D6EAB008203C4 /* PhotosDetailViewController.swift */; };
 		0BA0120B238DBC5B008203C4 /* postCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0120A238DBC5B008203C4 /* postCell.swift */; };
+		0BA0120D2392E1CE008203C4 /* feedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0120C2392E1CD008203C4 /* feedCell.swift */; };
 		A35F1A14D84A7946C783F598 /* Pods_PursuitsGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01572D931BB8B999E5D75EE4 /* Pods_PursuitsGram.framework */; };
 		EC352E943B4FD7E92D6055E6 /* Pods_PursuitsGramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860C58E6AA160944C92DE7D8 /* Pods_PursuitsGramTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		0BA01206238D6E7C008203C4 /* PostsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFeedViewController.swift; sourceTree = "<group>"; };
 		0BA01208238D6EAB008203C4 /* PhotosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailViewController.swift; sourceTree = "<group>"; };
 		0BA0120A238DBC5B008203C4 /* postCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCell.swift; sourceTree = "<group>"; };
+		0BA0120C2392E1CD008203C4 /* feedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedCell.swift; sourceTree = "<group>"; };
 		0C38D44C5837FE809CBF6389 /* Pods-PursuitsGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGram.release.xcconfig"; path = "Target Support Files/Pods-PursuitsGram/Pods-PursuitsGram.release.xcconfig"; sourceTree = "<group>"; };
 		49A8899007643574BC4FBF1C /* Pods-PursuitsGramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGramTests.release.xcconfig"; path = "Target Support Files/Pods-PursuitsGramTests/Pods-PursuitsGramTests.release.xcconfig"; sourceTree = "<group>"; };
 		6BB6AA3EECB1861112F5B451 /* Pods-PursuitsGramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitsGramTests.debug.xcconfig"; path = "Target Support Files/Pods-PursuitsGramTests/Pods-PursuitsGramTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA0120A238DBC5B008203C4 /* postCell.swift */,
+				0BA0120C2392E1CD008203C4 /* feedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA01205238CA4F9008203C4 /* ProfileEditViewController.swift in Sources */,
+				0BA0120D2392E1CE008203C4 /* feedCell.swift in Sources */,
 				0BA011FF238C8B5C008203C4 /* UploadViewController.swift in Sources */,
 				0BA011ED238C3613008203C4 /* FirebaseAuthService.swift in Sources */,
 				0BA011F5238C7047008203C4 /* AppUser.swift in Sources */,

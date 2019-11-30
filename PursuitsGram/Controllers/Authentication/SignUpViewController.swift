@@ -142,7 +142,7 @@ class SignUpViewController: UIViewController {
                 } else {
                     window.rootViewController = {
                         let profileSetupVC = ProfileEditViewController()
-                        //profileSetupVC.settingFromLogin = true
+                        profileSetupVC.settingFromLogin = true
                         return profileSetupVC
                     }()
                 }

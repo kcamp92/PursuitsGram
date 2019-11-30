@@ -24,8 +24,8 @@ class ProfileEditViewController: UIViewController {
     
     lazy var imageView: UIImageView = {
          let iv = UIImageView()
-         iv.backgroundColor = .black
-         iv.image = UIImage(systemName: "person")
+         iv.backgroundColor = #colorLiteral(red: 0.8844706416, green: 0.9299592376, blue: 0.9251627922, alpha: 1)
+         iv.image = UIImage(systemName: "person.crop.circle")
          return iv
      }()
      
@@ -34,7 +34,7 @@ class ProfileEditViewController: UIViewController {
           button.setTitle("Add Image", for: .normal)
           button.setTitleColor(.white, for: .normal)
           button.titleLabel?.font = UIFont(name: "Marker Felt", size: 14)
-          button.backgroundColor = UIColor(red: 255/255, green: 67/255, blue: 0/255, alpha: 1)
+          button.backgroundColor = #colorLiteral(red: 0.7356492877, green: 0.7233195901, blue: 1, alpha: 1)
           button.layer.cornerRadius = 5
           button.showsTouchWhenHighlighted = true
           button.addTarget(self, action: #selector(addImagePressed), for: .touchUpInside)
@@ -44,14 +44,14 @@ class ProfileEditViewController: UIViewController {
     lazy var userNameTextField: UITextField = {
          let textField = UITextField()
          textField.placeholder = "Enter User Name"
-         textField.font = UIFont(name: "Marker Felt", size: 14)
+         textField.font = UIFont(name: "Marker Felt", size: 16)
          textField.backgroundColor = .white
          textField.textAlignment = .left
          textField.borderStyle = .bezel
          textField.layer.cornerRadius = 5
          textField.autocorrectionType = .no
          textField.delegate = self
-         textField.textColor = .white
+         textField.textColor = .darkGray
          return textField
      }()
 
@@ -62,7 +62,7 @@ class ProfileEditViewController: UIViewController {
         button.setTitle("Save Profile", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Marker Felt", size: 14)
-        button.backgroundColor = UIColor(red: 255/255, green: 67/255, blue: 0/255, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.7356492877, green: 0.7233195901, blue: 1, alpha: 1)
         button.layer.cornerRadius = 5
         button.showsTouchWhenHighlighted = true
         button.addTarget(self, action: #selector(savePressed), for: .touchUpInside)
@@ -253,5 +253,3 @@ extension ProfileEditViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
     }
 }
-
-

@@ -16,8 +16,8 @@ class PursuitTabBar: UITabBarController {
     
     lazy var profileVC: UINavigationController  = {
         let userProfileVC = UserProfileViewController()
-       // userProfileVC.user = AppUser(from: FirebaseAuthService.manager.currentUser!)
-      //  userProfileVC.isCurrentUser = true
+        userProfileVC.user = AppUser(from: FirebaseAuthService.manager.currentUser!)
+        userProfileVC.isCurrentUser = true
         return UINavigationController(rootViewController: userProfileVC)
     }()
 
