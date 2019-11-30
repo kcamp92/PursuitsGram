@@ -10,11 +10,7 @@ import UIKit
 
 class feedCell: UICollectionViewCell {
     
-}
-/*
-class FeedCell: UICollectionViewCell {
-    
-    var feedImage: UIImageView = {
+    var feedPhotos: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .clear
         image.contentMode = .scaleAspectFit
@@ -46,14 +42,14 @@ class FeedCell: UICollectionViewCell {
     
     
     func setImageConstraints() {
-        contentView.addSubview(feedImage)
-        feedImage.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(feedPhotos)
+        feedPhotos.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            feedImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-            feedImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            feedImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            feedImage.widthAnchor.constraint(equalToConstant: feedImage.frame.width),
-            feedImage.heightAnchor.constraint(equalToConstant: contentView.frame.height - 100)])
+           feedPhotos.topAnchor.constraint(equalTo: contentView.topAnchor),
+            feedPhotos.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            feedPhotos.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+          feedPhotos.widthAnchor.constraint(equalToConstant: feedPhotos.frame.width),
+            feedPhotos.heightAnchor.constraint(equalToConstant: contentView.frame.height - 100)])
     }
 
     func setProfileImageConstraints() {
@@ -81,9 +77,9 @@ class FeedCell: UICollectionViewCell {
         contentView.addSubview(infoView)
         infoView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            infoView.topAnchor.constraint(equalTo: feedImage.bottomAnchor),
-            infoView.leadingAnchor.constraint(equalTo: feedImage.leadingAnchor),
-            infoView.trailingAnchor.constraint(equalTo: feedImage.trailingAnchor),
+            infoView.topAnchor.constraint(equalTo: feedPhotos.bottomAnchor),
+            infoView.leadingAnchor.constraint(equalTo: feedPhotos.leadingAnchor),
+            infoView.trailingAnchor.constraint(equalTo: feedPhotos.trailingAnchor),
             infoView.heightAnchor.constraint(equalToConstant: 100)])
     }
     
@@ -108,4 +104,4 @@ class FeedCell: UICollectionViewCell {
     }
     
 }
-*/
+
