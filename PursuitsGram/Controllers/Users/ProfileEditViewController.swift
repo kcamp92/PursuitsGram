@@ -176,14 +176,51 @@ class ProfileEditViewController: UIViewController {
 //MARK: -UI Constraints
 
     func addSubviews(){
-        
+        view.addSubview(imageView)
+        view.addSubview(addImage)
+        view.addSubview(userNameTextField)
+        view.addSubview(saveButton)
+        view.addSubview(cancelButton)
     }
     
     func setupConstraints(){
         
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: self.view.bounds.width / 2).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 2).isActive = true
+            
+        userNameTextField.translatesAutoresizingMaskIntoConstraints = false
+        userNameTextField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30).isActive = true
+        userNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        userNameTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        userNameTextField.widthAnchor.constraint(equalToConstant: view.bounds.width / 2).isActive = true
+    
+       
+        addImage.translatesAutoresizingMaskIntoConstraints = false
+        addImage.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 50).isActive = true
+        addImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        addImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        addImage.widthAnchor.constraint(equalToConstant: view.bounds.width / 3).isActive = true
+        
+        
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        saveButton.widthAnchor.constraint(equalToConstant: view.bounds.width / 3).isActive = true
+          
+        cancelButton.translatesAutoresizingMaskIntoConstraints = false
+        cancelButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
+        cancelButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        cancelButton.widthAnchor.constraint(equalToConstant: view.bounds.width / 3).isActive = true
+        
     }
     
 }
+
 
 //MARK: - Extensions
 
@@ -217,177 +254,4 @@ extension ProfileEditViewController: UITextFieldDelegate {
     }
 }
 
-/*
-import UIKit
-import Photos
 
-class ProfileEditViewController: UIViewController {
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-   
-        setupViews()
-        //MARK: TODO - load in user image and fields when coming from profile page
-    }
-    
-  
-    
-  
-    private func setupViews() {
-        setupImageView()
-        setupUserNameTextField()
-        setupAddImageButton()
-        setupSaveButton()
-    }
-    
-    private func setupImageView() {
-        view.addSubview(imageView)
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: self.view.bounds.width / 2),
-            imageView.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 2)
-        ])
-    }
-    
-    private func setupUserNameTextField() {
-        view.addSubview(userNameTextField)
-        
-        userNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            userNameTextField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30),
-            userNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            userNameTextField.heightAnchor.constraint(equalToConstant: 30),
-            userNameTextField.widthAnchor.constraint(equalToConstant: view.bounds.width / 2)
-        ])
-    }
-    
-    private func setupAddImageButton() {
-        view.addSubview(addImageButton)
-        
-        addImageButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            addImageButton.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 50),
-            addImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addImageButton.heightAnchor.constraint(equalToConstant: 50),
-            addImageButton.widthAnchor.constraint(equalToConstant: view.bounds.width / 3)
-        ])
-    }
-    
-    private func setupSaveButton() {
-        view.addSubview(saveButton)
-        
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            saveButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            saveButton.heightAnchor.constraint(equalToConstant: 30),
-            saveButton.widthAnchor.constraint(equalToConstant: view.bounds.width / 3)
-        ])
-    }
-}
-
-*/
-
-
-
-
-
-
-/*
-import UIKit
-import Photos
-
-class ProfileEditViewController: UIViewController {
-
-    //MARK: Lifecycle Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(white: 0.1, alpha: 1)
-        setupViews()
-        //MARK: TODO - load in user image and fields when coming from profile page
-    }
-    
-    override func viewDidLayoutSubviews() {
-        imageView.layer.cornerRadius = (imageView.frame.size.width) / 2
-        imageView.clipsToBounds = true
-        imageView.layer.borderWidth = 3.0
-        imageView.layer.borderColor = UIColor.white.cgColor
-    }
-
-    //MARK: Constraint Methods
-
-    private func setupViews() {
-        setupImageView()
-        setupUserNameTextField()
-        setupAddImageButton()
-        setupSaveButton()
-        setupCancelButton()
-    }
-
-    private func setupImageView() {
-        view.addSubview(imageView)
-
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
-            imageView.heightAnchor.constraint(equalToConstant: 200),
-            imageView.widthAnchor.constraint(equalToConstant: 200)
-        ])
-    }
-
-    private func setupUserNameTextField() {
-        view.addSubview(userNameTextField)
-
-        userNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            userNameTextField.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30),
-            userNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            userNameTextField.heightAnchor.constraint(equalToConstant: 30),
-            userNameTextField.widthAnchor.constraint(equalToConstant: view.bounds.width / 2)
-        ])
-    }
-
-    private func setupAddImageButton() {
-        view.addSubview(addImageButton)
-
-        addImageButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            addImageButton.topAnchor.constraint(equalTo: userNameTextField.bottomAnchor, constant: 50),
-            addImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addImageButton.heightAnchor.constraint(equalToConstant: 50),
-            addImageButton.widthAnchor.constraint(equalTo: view.widthAnchor)
-        ])
-    }
-
-    private func setupSaveButton() {
-        view.addSubview(saveButton)
-
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            saveButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            saveButton.heightAnchor.constraint(equalToConstant: 30),
-            saveButton.widthAnchor.constraint(equalToConstant: view.bounds.width / 3)
-        ])
-    }
-    
-    private func setupCancelButton() {
-        view.addSubview(cancelButton)
-
-        cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            cancelButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            cancelButton.heightAnchor.constraint(equalToConstant: 30),
-            cancelButton.widthAnchor.constraint(equalToConstant: view.bounds.width / 3)
-        ])
-    }
-}
-
-
-
-*/
