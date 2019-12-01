@@ -10,7 +10,7 @@ import UIKit
 
 class PursuitTabBar: UITabBarController {
     
-    lazy var postsVC = UINavigationController(rootViewController: PostListViewController())
+    lazy var feedVC = UINavigationController(rootViewController: PostsFeedViewController())
     
     lazy var uploadVC = UINavigationController(rootViewController: UploadViewController())
     
@@ -22,14 +22,14 @@ class PursuitTabBar: UITabBarController {
     }()
 
     override func viewDidLoad() {
-        postsVC.isNavigationBarHidden = true 
+        feedVC.isNavigationBarHidden = true
         uploadVC.isNavigationBarHidden = true
         profileVC.isNavigationBarHidden = true
         super.viewDidLoad()
-        postsVC.tabBarItem = UITabBarItem(title: "Posts", image: UIImage(systemName: "list.bullet"), tag: 0)
+        feedVC.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "list.bullet"), tag: 0)
         uploadVC.tabBarItem = UITabBarItem(title: "Upload", image: UIImage(systemName: "plus.square"), tag: 1)
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 2)
-        self.viewControllers = [postsVC,uploadVC,profileVC]
+        self.viewControllers = [feedVC,uploadVC,profileVC]
         self.viewControllers?.forEach({ $0.tabBarController?.tabBar.barStyle = .black})
 
         // Do any additional setup after loading the view.
