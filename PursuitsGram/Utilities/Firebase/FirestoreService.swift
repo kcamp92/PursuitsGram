@@ -137,19 +137,7 @@ class FirestoreService {
             }
             
         }
-        private init () {}
-    }
-/*
-    func updateAppUser(id: String,newDisplayName: String,completion: @escaping (Result<(),Error>) -> ()) {
-          db.collection(FireStoreCollections.users.rawValue).document(id).updateData(["userName": newDisplayName]) { (error) in
-              if let error = error {
-                  completion(.failure(error))
-              } else {
-                  completion(.success(()))
-              }
-          }
-      }
-      
+    
  
     func getUserFromPost(creatorID: String, completion: @escaping (Result<AppUser,Error>) -> ()) {
         db.collection(FireStoreCollections.users.rawValue).document(creatorID).getDocument { (snapshot, error) in
@@ -167,4 +155,17 @@ class FirestoreService {
         }
     }
     
+     private init () {}
+    
+}
+/*
+  func updateAppUser(id: String,newDisplayName: String,completion: @escaping (Result<(),Error>) -> ()) {
+        db.collection(FireStoreCollections.users.rawValue).document(id).updateData(["userName": newDisplayName]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
 */
