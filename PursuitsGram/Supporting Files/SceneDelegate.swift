@@ -20,12 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
               window = UIWindow(frame: UIScreen.main.bounds)
               window?.windowScene = scene
+        
+        if let userLoggedIn = FirebaseAuthService.manager.currentUser {
+            window?.rootViewController = PursuitTabBar()
+            window?.makeKeyAndVisible()
+        } else {
               window?.rootViewController = LoginViewController()
               window?.makeKeyAndVisible()
-        //MARK: TODO - switch root view controller on firebase current user.
-                    //Discussion - is the iOS currentUser object token-safe with the authentication service?
+        }
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
