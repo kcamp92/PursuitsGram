@@ -20,7 +20,7 @@ class feedCell: UICollectionViewCell {
     
     var infoView: UIView = {
         let view = UIView()
-        view.backgroundColor = .init(white: 0.3, alpha: 0.8)
+        view.backgroundColor = .gray
         return view
     }()
     
@@ -31,74 +31,62 @@ class feedCell: UICollectionViewCell {
         image.tintColor = .white
         return image
     }()
-    var nameLabel: UILabel = {
+    
+    var userNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.backgroundColor = .clear
-        
         label.textAlignment = .left
         return label
     }()
     
-    
-    func setImageConstraints() {
+    func addSubviews(){
+        
         contentView.addSubview(feedPhotos)
-        feedPhotos.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-           feedPhotos.topAnchor.constraint(equalTo: contentView.topAnchor),
-            feedPhotos.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            feedPhotos.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-          feedPhotos.widthAnchor.constraint(equalToConstant: feedPhotos.frame.width),
-            feedPhotos.heightAnchor.constraint(equalToConstant: contentView.frame.height - 100)])
-    }
-
-    func setProfileImageConstraints() {
         infoView.addSubview(profileImage)
-        profileImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            profileImage.topAnchor.constraint(equalTo: infoView.topAnchor, constant: -20),
-            profileImage.leadingAnchor.constraint(equalTo: infoView.leadingAnchor),
-            profileImage.heightAnchor.constraint(equalToConstant: 70),
-            profileImage.widthAnchor.constraint(equalToConstant: 70)])
+        infoView.addSubview(userNameLabel)
+        contentView.addSubview(infoView)
     }
     
-    func setNameConstraints() {
-           infoView.addSubview(nameLabel)
-           nameLabel.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: infoView.topAnchor, constant: -20),
-               nameLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 10),
-               nameLabel.trailingAnchor.constraint(equalTo: infoView.trailingAnchor),
-               nameLabel.heightAnchor.constraint(equalTo: infoView.heightAnchor)])
-       }
+    func setupConstraints() {
+        
        
+        feedPhotos.translatesAutoresizingMaskIntoConstraints = false
+        feedPhotos.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        feedPhotos.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        feedPhotos.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        feedPhotos.widthAnchor.constraint(equalToConstant: feedPhotos.frame.width).isActive = true
+        feedPhotos.heightAnchor.constraint(equalToConstant: contentView.frame.height - 100).isActive = true
+
+        
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        profileImage.topAnchor.constraint(equalTo: infoView.topAnchor, constant: -20).isActive = true
+        profileImage.leadingAnchor.constraint(equalTo: infoView.leadingAnchor).isActive = true
+        profileImage.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        profileImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
+
+          
+        userNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        userNameLabel.topAnchor.constraint(equalTo: infoView.topAnchor, constant: -20).isActive = true
+        userNameLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 10).isActive = true
+        userNameLabel.trailingAnchor.constraint(equalTo: infoView.trailingAnchor).isActive = true
+        userNameLabel.heightAnchor.constraint(equalTo: infoView.heightAnchor).isActive = true
     
-    func setInfoViewConstraints(){
-        contentView.addSubview(infoView)
+        
         infoView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            infoView.topAnchor.constraint(equalTo: feedPhotos.bottomAnchor),
-            infoView.leadingAnchor.constraint(equalTo: feedPhotos.leadingAnchor),
-            infoView.trailingAnchor.constraint(equalTo: feedPhotos.trailingAnchor),
-            infoView.heightAnchor.constraint(equalToConstant: 100)])
+        infoView.topAnchor.constraint(equalTo: feedPhotos.bottomAnchor).isActive = true
+        infoView.leadingAnchor.constraint(equalTo: feedPhotos.leadingAnchor).isActive = true
+        infoView.trailingAnchor.constraint(equalTo: feedPhotos.trailingAnchor).isActive = true
+        infoView.heightAnchor.constraint(equalToConstant: 100).isActive = true 
     }
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setImageConstraints()
-        setInfoViewConstraints()
-        setProfileImageConstraints()
-        setNameConstraints()
+        addSubviews()
+        setupConstraints()
     }
 
-    override func layoutSubviews() {
-        profileImage.layer.cornerRadius = (profileImage.frame.size.width) / 2
-        profileImage.clipsToBounds = true
-        profileImage.layer.borderWidth = 3.0
-        profileImage.layer.borderColor = UIColor.white.cgColor
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
