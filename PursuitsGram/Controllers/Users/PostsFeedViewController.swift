@@ -26,7 +26,7 @@ class PostsFeedViewController: UIViewController {
     label.attributedText = attributedTitle
     label.textAlignment = .center
     label.textColor = .white
-    label.backgroundColor = .clear
+    label.backgroundColor = .blue
     return label
     }()
     
@@ -118,7 +118,7 @@ extension PostsFeedViewController: UICollectionViewDelegate, UICollectionViewDat
                     case .failure(let error):
                         print(error)
                     case .success(let fbImage):
-                       // cell.feedPhotos.image = fbImage
+                       cell.feedPhotos.image = fbImage
                         print("")
                     }
                 }

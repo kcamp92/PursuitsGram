@@ -92,6 +92,7 @@ class UserProfileViewController: UIViewController {
           button.titleLabel?.text = "Log Out"
           button.backgroundColor = .clear
           button.titleLabel?.textColor = .white
+          button.titleLabel?.font = UIFont(name: "Marker Felt", size: 18)
           button.setTitle("Log Out", for: .normal)
           button.showsTouchWhenHighlighted = true
           button.addTarget(self, action: #selector(userLogOut), for: .touchUpInside)
@@ -121,11 +122,7 @@ class UserProfileViewController: UIViewController {
     editVC.modalPresentationStyle = .fullScreen
     present(editVC, animated: true, completion: nil)
 }
-    
-//     @objc private func editProfile() {
-//         navigationController?.pushViewController(ProfileEditViewController(), animated: true)
-//     }
-//
+ 
 
   @objc func userLogOut(){
         let alert = UIAlertController(title: "Log Out", message: nil, preferredStyle: .actionSheet)
@@ -164,23 +161,6 @@ class UserProfileViewController: UIViewController {
         }
         
     }
-    /*
-     private func getUserPosts() {
-         if let userUID =  FirebaseAuthService.manager.currentUser?.uid {
-             FirestoreService.manager.getPosts(forUserID: userUID, completion: { (result) in
-             switch result {
-             case .failure(let error):
-                 print(error)
-             case .success(let postsFromFirebase):
-                 DispatchQueue.main.async {
-                     self.posts = postsFromFirebase
-                 }
-             }
-         }
-         )}
-     }
-     
-      */
     
     private func setUpUserName(){
            if let displayName =
@@ -247,8 +227,8 @@ class UserProfileViewController: UIViewController {
         
         logoLabel.translatesAutoresizingMaskIntoConstraints = false
         logoLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
-        logoLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        logoLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        logoLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        logoLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         
         
         profileImage.translatesAutoresizingMaskIntoConstraints = false
@@ -291,16 +271,6 @@ class UserProfileViewController: UIViewController {
               }
               
     }
-    
-  
-    /*
-     private func setUpView(){
-            setUserName()
-            setProfileImage()
-            constrainLogOutButton()
-        }
-*/
-
 
 //MARK: -CollectionView Extensions
 
@@ -345,47 +315,3 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
          present(detailVC, animated: true, completion: nil)
      }
 }
-
-/*import UIKit
-import FirebaseAuth
-
-class ProfileViewController: UIViewController {
-    
-    //MARK: Lifecycle Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.init(white: 0.1, alpha: 1)
-    
-        setUpView()
-        getUserPosts()
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        profileImage.layer.cornerRadius = (profileImage.frame.size.width) / 2
-        profileImage.clipsToBounds = true
-        profileImage.layer.borderWidth = 3.0
-        profileImage.layer.borderColor = UIColor.white.cgColor
-        getPostCount()
-    }
-   
-    //MARK: Constraint Methods
-    
-    private func setUpView(){
-        constrainProfileImage()
-        constrainStats()
-        constrainUserName()
-        constrainEditButton()
-        constrainCollectionView()
-        setUserName()
-        setProfileImage()
-        constrainLogOutButton()
-    }
-    
-    
-    
-    
-    
-    
-
-*/

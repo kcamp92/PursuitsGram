@@ -95,6 +95,7 @@ class ProfileEditViewController: UIViewController {
 //MARK: -Objc Methods
     
     @objc private func savePressed(){
+        
            guard let userName = userNameTextField.text, let imageURL = imageURL else {
              showAlert(with: "Failure", and: "Profile Not Updated")
                return
@@ -157,7 +158,8 @@ class ProfileEditViewController: UIViewController {
     }
     
     private func handleNavAwayFromVC(){
-        if settingFromLogin{
+        
+        if settingFromLogin {
             guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                 let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window
                 else {

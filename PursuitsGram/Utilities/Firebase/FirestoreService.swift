@@ -121,23 +121,6 @@ class FirestoreService {
             }
         }
     
-    /*func getAllPosts(sortingCriteria: SortingCriteria?, completion: @escaping (Result<[Post], Error>) -> ()) {
-        let completionHandler: FIRQuerySnapshotBlock = {
-            (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
-                    let postID = snapshot.documentID
-                    let post = Post(from: snapshot.data(), id: postID)
-                    return post
-                })
-                completion(.success(posts ?? []))
-            }
-        }
-        db.collection(FireStoreCollections.posts.rawValue).order(by: sortingCriteria?.rawValue ?? "dateCreated", descending: sortingCriteria?.shouldSortAscending ?? true).getDocuments(completion: completionHandler)
-            
-    }*/
         
         func getPosts(forUserID: String, completion: @escaping (Result<[Post], Error>) -> ()) {
             db.collection(FireStoreCollections.posts.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in

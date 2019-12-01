@@ -12,7 +12,7 @@ class feedCell: UICollectionViewCell {
     
     var feedPhotos: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .clear
+        image.backgroundColor = .green
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -35,7 +35,7 @@ class feedCell: UICollectionViewCell {
     var userNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.backgroundColor = .clear
+        label.backgroundColor = .systemRed
         label.textAlignment = .left
         return label
     }()
