@@ -133,9 +133,9 @@ extension PostsFeedViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let postSelected = posts[indexPath.row]
         let detailVC = PhotosDetailViewController()
-        //detailVC.post = postSelected
+        detailVC.post = postSelected
         self.navigationController?.pushViewController(detailVC, animated: true)
-       // present(detailVC, animated: true, completion: nil)
+        //present(detailVC, animated: true, completion: nil)
     }
 
     

@@ -168,17 +168,7 @@ class UserProfileViewController: UIViewController {
                userDisplayName.text = displayName
            }
        }
-    
-    /*   private func setupNavigation() {
-         self.title = "Profile"
-         if isCurrentUser {
-             self.navigationItem.rightBarButtonItem =
-                 UIBarButtonItem(image: UIImage(systemName: "pencil.circle"), style: .plain, target: self, action: #selector(editProfile))
-         }
-     }
-     
-    
-     */
+
     
     private func setUpProfileImage(){
         if let imageUrl = FirebaseAuthService.manager.currentUser?.photoURL{
@@ -311,7 +301,7 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let postSelected = posts[indexPath.row]
          let detailVC = PhotosDetailViewController()
-       //  detailVC.post = postSelected
+         detailVC.post = postSelected
          present(detailVC, animated: true, completion: nil)
      }
 }

@@ -70,12 +70,16 @@ class PhotosDetailViewController: UIViewController {
      
 
     //MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSubviews()
+        setupConstraints()
+        dateLabelSetup()
         
         }
-            
-    //MARK: -Objc Methods
+       
+   
     //MARK: -Private Methods
     
     private func getSelectedPhoto(photoUrl: String){
@@ -97,12 +101,12 @@ class PhotosDetailViewController: UIViewController {
                   print(error)
               case .success(let user):
                   self.subNameLabel.text = user.userName
-                  self.setProfileImage(user: user)
+                  self.getProfileImage(user: user)
               }
           }
       }
       
-      private func setProfileImage(user: AppUser) {
+      private func getProfileImage(user: AppUser) {
         FirebaseStorageService.manager.getUserImage(photoURL: URL(string: user.photoURL!)!) { (result) in
               switch result {
               case .failure(let error):
@@ -113,7 +117,7 @@ class PhotosDetailViewController: UIViewController {
           }
       }
       
-      private func setDateLabel(){
+      private func dateLabelSetup(){
           if let date = post.dateCreated {
            let formatter = DateFormatter()
               formatter.dateStyle = .long
@@ -125,6 +129,48 @@ class PhotosDetailViewController: UIViewController {
       
       
     //MARK: -UI Constraints
-    //MARK: -Extensions
+    func addSubviews(){
+        view.addSubview(detailImage)
+        view.addSubview(profileImage)
+        view.addSubview(imageDetailLabel)
+        view.addSubview(subNameLabel)
+        view.addSubview(dateCreatedLabel)
+       
+    }
+    func setupConstraints() {
             
+        imageDetailLabel.translatesAutoresizingMaskIntoConstraints = false
+        imageDetailLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        imageDetailLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        imageDetailLabel.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        imageDetailLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+
+               
+        detailImage.translatesAutoresizingMaskIntoConstraints = false
+        detailImage.topAnchor.constraint(equalTo: imageDetailLabel.bottomAnchor, constant: 50).isActive = true
+        detailImage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+       // detailImage.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        detailImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        detailImage.heightAnchor.constraint(equalToConstant: 90).isActive = true
+ 
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: -20).isActive = true
+        profileImage.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        profileImage.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        profileImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        subNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        subNameLabel.topAnchor.constraint(equalTo: detailImage.bottomAnchor, constant: 20).isActive = true
+        subNameLabel.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10).isActive = true
+        subNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        subNameLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        dateCreatedLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateCreatedLabel.topAnchor.constraint(equalTo: subNameLabel.bottomAnchor, constant: 30).isActive = true
+        dateCreatedLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 10).isActive = true
+        dateCreatedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        dateCreatedLabel.heightAnchor.constraint(equalTo: subNameLabel.heightAnchor).isActive = true
+    }
+  
 }
+
