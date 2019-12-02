@@ -97,6 +97,7 @@ class SignUpViewController: UIViewController {
         }
         FirebaseAuthService.manager.createNewUser(email: email.lowercased(), password: password) { [weak self] (result) in
             self?.handleCreateAccountResponse(with: result)
+            
         }
     }
     
@@ -114,7 +115,7 @@ class SignUpViewController: UIViewController {
             [weak self] in
             switch result {
             case .success(let user):
-                FirestoreService.manager.createAppUser(user: AppUser(from: user)) { [weak self] newResult in
+                FirestoreService.manager.createAppUser(user: AppUser(from: user)) { [weak self] (newResult) in
                     self?.handleUserCreatedInFirestore(result: newResult)
                 }
             case .failure(let error):

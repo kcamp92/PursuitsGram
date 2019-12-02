@@ -100,9 +100,11 @@ class ProfileEditViewController: UIViewController {
              showAlert(with: "Failure", and: "Profile Not Updated")
                return
            }
+        
         FirebaseAuthService.manager.updateUserFields(userName: userName, photoURL: imageURL) { (result) in
             switch result {
             case .success():
+                
                 FirestoreService.manager.updateCurrentUser(userName: userName, photoURL: imageURL) { [weak self] (nextResult) in
                     switch nextResult {
                     case .success():

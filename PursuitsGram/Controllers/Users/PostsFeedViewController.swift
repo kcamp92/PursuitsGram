@@ -26,7 +26,7 @@ class PostsFeedViewController: UIViewController {
     label.attributedText = attributedTitle
     label.textAlignment = .center
     label.textColor = .white
-    label.backgroundColor = .blue
+    label.backgroundColor = .clear
     return label
     }()
     
@@ -77,6 +77,13 @@ class PostsFeedViewController: UIViewController {
 
    private func setupConstraints() {
     
+    view.addSubview(feedLabel)
+      feedLabel.translatesAutoresizingMaskIntoConstraints = false
+      feedLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+      feedLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+      feedLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+      feedLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+    
     view.addSubview(feedCollectionView)
     feedCollectionView.translatesAutoresizingMaskIntoConstraints = false
     feedCollectionView.topAnchor.constraint(equalTo: feedLabel.bottomAnchor, constant: 40).isActive = true
@@ -84,12 +91,7 @@ class PostsFeedViewController: UIViewController {
     feedCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
     feedCollectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
-    view.addSubview(feedLabel)
-    feedLabel.translatesAutoresizingMaskIntoConstraints = false
-    feedLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-    feedLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-    feedLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    feedLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+  
      
   }
 

@@ -66,6 +66,8 @@ class UploadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .darkGray
+        setupConstraints()
 
         // Do any additional setup after loading the view.
     }
@@ -94,18 +96,18 @@ class UploadViewController: UIViewController {
      }
      
      @objc func uploadTapped() {
-//         guard let user = FirebaseAuthService.manager.currentUser else {return}
-//         guard let photoUrl = imageURL else {return}
-//        FirestoreService.manager.createPost(post: Post(from: photoUrl, id: user.uid)) { (result) in
-//             switch result {
-//             case .failure(let error):
-//                 self.showAlert(with: "Couldn't add post", and: "Error: \(error)")
-//             case .success:
-//                 self.showAlert(with: "Success", and: "Post created!")
-//                 self.uploadImageView.image = nil
-////                 
+//        guard let user = FirebaseAuthService.manager.currentUser else {return}
+//       guard let photoUrl = imageURL else {return}
+//      FirestoreService.manager.createPost(post: Post(from: photoUrl, id: user.uid)) { (result) in
+//         switch result {
+//            case .failure(let error):
+//               self.showAlert(with: "Couldn't add post", and: "Error: \(error)")
+//            case .success:
+//               self.showAlert(with: "Success", and: "Post created!")
+//                self.uploadImageView.image = nil
+//
 //             }
-//         }
+//       }
      }
 
     //MARK: -Private methods
@@ -129,6 +131,40 @@ private func presentPhotoPickerController() {
    
  
     //MARK: -UI Constraints
+    
+    private func setupConstraints(){
+    
+            view.addSubview(uploadImageLabel)
+            uploadImageLabel.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+            uploadImageLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            uploadImageLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            uploadImageLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)])
+      
+            view.addSubview(uploadImageView)
+            uploadImageView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+            uploadImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 100),
+            uploadImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            uploadImageView.widthAnchor.constraint(equalToConstant: 300),
+            uploadImageView.heightAnchor.constraint(equalToConstant: 300)])
+   
+            view.addSubview(uploadButton)
+            uploadButton.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+            uploadButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            uploadButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            uploadButton.widthAnchor.constraint(equalTo: view.widthAnchor),
+            uploadButton.heightAnchor.constraint(equalToConstant: 70)])
+      
+            view.addSubview(addButton)
+            addButton.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+            addButton.bottomAnchor.constraint(equalTo: uploadImageView.topAnchor, constant: 10),
+            addButton.trailingAnchor.constraint(equalTo: uploadImageView.trailingAnchor,constant: 20),
+            addButton.heightAnchor.constraint(equalToConstant: 45),
+            addButton.widthAnchor.constraint(equalToConstant: 40)])
+    }
 }
     //MARK: - Extensions
 
@@ -161,5 +197,6 @@ private func presentPhotoPickerController() {
         }
     }
 
-    
-        
+
+
+
