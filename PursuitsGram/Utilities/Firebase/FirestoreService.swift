@@ -97,6 +97,8 @@ class FirestoreService {
                 }
             }
         }
+    
+    
         
         func getAllPosts(sortingCriteria: SortingCriteria? = nil, completion: @escaping (Result<[Post], Error>) -> ()) {
             let completionHandler: FIRQuerySnapshotBlock = {(snapshot, error) in

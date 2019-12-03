@@ -15,22 +15,23 @@ struct Post {
     let id: String
     let creatorID: String
     let dateCreated: Date?
-    let imagePhoto: String?
+    let photoUrl: String
     
-    init(title: String, body: String, creatorID: String, dateCreated: Date?, imagePhoto: String? = nil) {
+    init(title: String, body: String, creatorID: String, dateCreated: Date?, photoUrl: String) {
         self.title = title
         self.body = body
         self.creatorID = creatorID
         self.id = UUID().description
         self.dateCreated = dateCreated
-        self.imagePhoto = imagePhoto
+        self.photoUrl = photoUrl
     }
+    
     
     init?(from dict: [String: Any], id: String) {
         guard let title = dict["title"] as? String,
             let body = dict["body"] as? String,
             let userID = dict["creatorID"] as? String,
-            let imagePhoto = dict["imagePhoto"] as? String,
+            let photoUrl = dict["photoUrl"] as? String,
             let dateCreated = (dict["dateCreated"] as? Timestamp)?.dateValue() else { return nil }
         
         self.title = title
@@ -38,7 +39,7 @@ struct Post {
         self.creatorID = userID
         self.id = id
         self.dateCreated = dateCreated
-        self.imagePhoto = imagePhoto
+        self.photoUrl = photoUrl
     }
     
     var fieldsDict: [String: Any] {
@@ -46,7 +47,7 @@ struct Post {
             "title": self.title,
             "body": self.body,
             "creatorID": self.creatorID,
-            "imagePhoto":self.imagePhoto
+            "photoUrl": self.photoUrl
         ]
     }
 }

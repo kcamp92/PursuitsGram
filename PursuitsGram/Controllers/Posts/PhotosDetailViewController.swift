@@ -15,7 +15,7 @@ class PhotosDetailViewController: UIViewController {
         didSet {
             view.layoutSubviews()
             DispatchQueue.main.async {
-                if let photoUrl = self.post?.imagePhoto {
+                if let photoUrl = self.post?.photoUrl{
                     self.getSelectedPhoto(photoUrl: photoUrl)
                 }
             }

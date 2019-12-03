@@ -16,6 +16,7 @@ class UploadViewController: UIViewController {
             self.uploadImageView.image = image
         }
     }
+    
     var imageURL: String? = nil
 
     //MARK:- UI Objects
@@ -96,20 +97,24 @@ class UploadViewController: UIViewController {
      }
      
      @objc func uploadTapped() {
-//        guard let user = FirebaseAuthService.manager.currentUser else {return}
-//       guard let photoUrl = imageURL else {return}
-//      FirestoreService.manager.createPost(post: Post(from: photoUrl, id: user.uid)) { (result) in
-//         switch result {
-//            case .failure(let error):
-//               self.showAlert(with: "Couldn't add post", and: "Error: \(error)")
-//            case .success:
-//               self.showAlert(with: "Success", and: "Post created!")
-//                self.uploadImageView.image = nil
-//
-//             }
-//       }
+        guard let user = FirebaseAuthService.manager.currentUser else {return}
+       guard let photoUrl = imageURL else {return}
+        let newPost = Post(title: "", body: "", creatorID: user.uid, dateCreated: nil, photoUrl: photoUrl)
+        FirestoreService.manager.createPost(post: newPost) { (result) in
+       // createPost(post: Post(from: photoUrl, id: user.uid)) { (result) in
+         switch result {
+            case .failure(let error):
+               self.showAlert(with: "Couldn't add post", and: "Error: \(error)")
+            case .success:
+               self.showAlert(with: "Success", and: "Post created!")
+                self.uploadImageView.image = nil
+
+             }
+       }
      }
 
+  
+    
     //MARK: -Private methods
 
 private func presentPhotoPickerController() {

@@ -275,8 +275,7 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
         cell.backgroundColor = UIColor.white
         let post = posts[indexPath.row]
         DispatchQueue.main.async {
-            if let photoUrl = post.imagePhoto {
-                FirebaseStorageService.manager.getImage(url: photoUrl) {(result) in
+            FirebaseStorageService.manager.getImage(url: post.photoUrl) {(result) in
                     switch result {
                     case .failure(let error):
                         print(error)
@@ -284,7 +283,6 @@ extension UserProfileViewController: UICollectionViewDataSource, UICollectionVie
                         cell.postImages.image = fbImage
                     }
                 }
-            }
         }
         return cell
     }

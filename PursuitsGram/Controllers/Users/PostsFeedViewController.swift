@@ -114,8 +114,7 @@ extension PostsFeedViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         let post = posts[indexPath.row]
         DispatchQueue.main.async {
-            if let photoURL = post.imagePhoto {
-                FirebaseStorageService.manager.getImage(url: photoURL) { (result) in
+                FirebaseStorageService.manager.getImage(url: post.photoUrl) { (result) in
                     switch result {
                     case .failure(let error):
                         print(error)
@@ -123,9 +122,7 @@ extension PostsFeedViewController: UICollectionViewDelegate, UICollectionViewDat
                        cell.feedPhotos.image = fbImage
                         print("")
                     }
-                }
-            
-            }
+             }
         }
         return cell
     }
